@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Coming Soon & Notify Me</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uswds@2.13.0/dist/css/uswds.min.css">
+    <!-- FontAwesome for social media icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         /* General Styles */
         body {
@@ -15,13 +17,55 @@
             background-color: #f4f4f4;
             color: #333;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            flex-direction: column;
             box-sizing: border-box;
-            overflow-y: auto;
+        }
+
+        /* Main content container */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            margin-top: 80px;
+            /* Added margin-top to create space from the menu */
+        }
+
+        /* Navigation Menu Styles */
+        .nav-menu {
+            width: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .nav-logo img {
+            max-height: 40px;
+        }
+
+        .nav-social a {
+            margin-left: 15px;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-social a:hover {
+            color: #ffcc00;
         }
 
         .container {
@@ -29,9 +73,7 @@
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            max-width: 500px;
             width: 100%;
-            margin-bottom: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -53,16 +95,17 @@
         .logo span {
             display: block;
             font-size: 2rem;
-            color: #005ea2;
+            color: #010101;
         }
 
         .logo span:nth-child(2) {
-            font-size: 1.75rem;
+            font-size: 1.75rem
+            color: #000;
         }
 
         h1 {
             font-size: 2.5rem;
-            color: #005ea2;
+            color: #000;
             margin-bottom: 15px;
         }
 
@@ -101,10 +144,14 @@
             text-align: center;
         }
 
+        /* Footer Section */
         footer {
-            margin-top: 20px;
             font-size: 1.25rem;
-            color: #888;
+            color: #fff;
+            background-color: #000;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
         }
 
         form {
@@ -114,6 +161,7 @@
 
         form input[type="email"] {
             margin-bottom: 20px;
+            /* Space between email input and subscribe button */
             padding: 10px;
             font-size: 1.25rem;
             border-radius: 4px;
@@ -123,161 +171,141 @@
             margin: 0 auto;
         }
 
-        /* Portrait Mode for Mobile and Tablets */
+        form button[type="submit"] {
+            margin-top: 20px;
+            /* Adds space above the submit button */
+        }
+
+        /* Social Media Icons */
+        .usa-footer__social a {
+            margin-right: 15px;
+            font-size: 1.75rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .usa-footer__social a:hover {
+            color: #ffcc00;
+        }
+
+        /* Mobile-optimized styles */
         @media (max-width: 767px) {
-            body {
-                justify-content: flex-start;
-                padding-top: 10px;
+            .container {
+                padding: 10px;
+                max-width: 90%;
+                margin-top: 60px;
                 text-align: center;
             }
 
-            .logo {
-                font-size: 2.5rem;
+            .logo img {
+                max-width: 150px;
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
 
             p {
-                font-size: 1.25rem;
+                font-size: 1rem;
+                margin-bottom: 15px;
             }
 
             .btn {
+                font-size: 1rem;
+                padding: 10px 25px;
+                max-width: 200px;
+            }
+
+            .nav-menu {
+                padding: 5px 15px;
+            }
+
+            .nav-social a {
                 font-size: 1.25rem;
-                width: 100%;
-                max-width: 250px;
-                margin: 0 auto;
             }
 
             footer {
-                font-size: 1.25rem;
+                padding: 10px 0;
             }
 
-            .container {
-                padding: 15px;
-                max-width: 100%;
-                text-align: center;
-                justify-content: center;
-                align-items: center;
+            .usa-footer__secondary-section {
+                gap: 5px;
             }
 
-            form input[type="email"] {
-                font-size: 1.25rem;
-                max-width: 90%;
-                margin-bottom: 25px;
-            }
-
-            .btn-container {
-                flex-direction: column;
-                gap: 20px;
-                width: 100%;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-
-        /* iPad Portrait Fix */
-        @media (min-width: 768px) and (max-width: 1024px) {
-            form input[type="email"] {
-                margin-bottom: 20px;
-                max-width: 90%;
-            }
-
-            .btn {
-                font-size: 1.25rem;
-                max-width: 250px;
-                margin-top: 20px;
-            }
-
-            .container {
-                padding: 20px;
-                max-width: 100%;
-                min-height: 350px;
-            }
-
-            footer {
-                font-size: 1.25rem;
-            }
-        }
-
-        /* iPad Landscape Fix */
-        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-            .container {
-                width: 90%;
-                padding: 15px;
-                min-height: 300px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                overflow: visible;
-            }
-
-            .logo {
-                font-size: 2.5rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            form input[type="email"] {
-                font-size: 1.25rem;
-                max-width: 80%;
-                margin-bottom: 20px;
-            }
-
-            .btn {
-                font-size: 1.25rem;
-                width: 100%;
-                max-width: 250px;
-                margin: 0 auto;
-            }
-
-            footer {
-                font-size: 1.25rem;
+            .usa-footer__contact-info p {
+                font-size: 10px;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Coming Soon Section -->
-    <div id="comingSoonSection" class="container">
-        <div class="logo">
-            <img src="https://i.postimg.cc/VsnBbzHR/lg-black.png" alt="USWDS Logo"
-                style="max-width: 150px; margin-bottom: 15px;">
-            <span>USWDS</span>
-            <span>United States Web Design System</span>
+    <!-- Navigation Menu -->
+    <div class="nav-menu">
+        <div class="nav-logo">
+            <a href="#"><img src="https://i.postimg.cc/VsnBbzHR/lg-black.png" alt="Logo"></a>
         </div>
-        <h1>Coming Soon</h1>
-        <p>Our website is under construction. Stay tuned for updates!</p>
-        <div class="btn-container">
-            <button onclick="showNotifyMe()" class="btn">Notify Me</button>
+        <div class="nav-social">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
         </div>
     </div>
 
-    <!-- Notify Me Section -->
-    <div id="notifyMeSection" class="container" style="display:none;">
-        <div class="logo">
-            <img src="https://i.postimg.cc/VsnBbzHR/lg-black.png" alt="USWDS Logo"
-                style="max-width: 150px; margin-bottom: 15px;">
-            <span>USWDS</span>
-            <span>United States Web Design System</span>
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Coming Soon Section (Visible by default) -->
+        <div id="comingSoonSection" class="container">
+            <!-- Moved Logo into Main Content -->
+            <div class="logo">
+                <img src="https://i.postimg.cc/VsnBbzHR/lg-black.png" alt="USWDS Logo"
+                    style="max-width: 200px; max-height: 80px; margin-bottom: 20px;">
+                <span>(USWDS)</span>
+                <span>United States Web Design System</span>
+            </div>
+            <h1>Coming Soon</h1>
+            <p>Our website is under construction. Stay tuned for the big launch!</p>
+            <div class="btn-container">
+                <button class="btn" onclick="showNotifyMe()">Notify Me</button>
+            </div>
         </div>
-        <h1>Notify Me</h1>
-        <p>Enter your email to get notified when the website is live.</p>
-        <form action="https://formspree.io/f/xdkogwda" method="POST" id="notifyForm">
-            <input type="email" name="email" placeholder="Enter your email" required aria-label="Email Address">
-            <button type="submit" class="btn">Notify Me</button>
-        </form>
-        <button onclick="showComingSoon()" class="btn" style="background-color: #d9534f;">Back to Coming Soon</button>
+
+        <!-- Notify Me Section (Hidden by default) -->
+        <div id="notifyMeSection" class="container" style="display: none;">
+            <!-- Moved Logo into Main Content -->
+            <div class="logo">
+                <img src="https://i.postimg.cc/VsnBbzHR/lg-black.png" alt="USWDS Logo"
+                    style="max-width: 200px; max-height: 80px; margin-bottom: 20px;">
+                <span>(USWDS)</span>
+                <span>United States Web Design System</span>
+            </div>
+            <h1>Notify Me</h1>
+            <p>Stay updated with the latest news. Enter your email to get notified when we launch!</p>
+            <!-- Formspree Integration -->
+            <form action="https://formspree.io/f/xdkogwda" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button class="btn" type="submit">Subscribe</button>
+            </form>
+            <div class="btn-container">
+                <button class="btn" style="background-color: red;" onclick="showComingSoon()">Back to Coming Soon</button>
+
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 USWDS. All rights reserved.</p>
+        <div class="usa-footer__social">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+        </div>
     </footer>
 
     <script>
@@ -287,26 +315,9 @@
         }
 
         function showComingSoon() {
-            document.getElementById('notifyMeSection').style.display = 'none';
             document.getElementById('comingSoonSection').style.display = 'block';
+            document.getElementById('notifyMeSection').style.display = 'none';
         }
-
-        document.querySelector("form").addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            let formData = new FormData(event.target);
-            fetch(event.target.action, {
-                method: 'POST',
-                body: formData
-            }).then(response => {
-                if (response.ok) {
-                    document.getElementById('notifyMeSection').style.display = 'none';
-                    alert('Thank you for subscribing!');
-                }
-            }).catch(error => {
-                // No error message displayed anymore
-            });
-        });
     </script>
 </body>
 
