@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notify Me - Coming Soon</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uswds@2.13.0/dist/css/uswds.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #005ea2;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #005ea2;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #005ea2;
+            color: #ffffff;
+            font-weight: 500;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.125rem;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            width: 200px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #004a87;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.875rem;
+            color: #888;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        form input[type="email"] {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <span>USWDS</span> <br> United States Web Design System
+        </div>
+        <h1>Notify Me</h1>
+        <p>Enter your email to get notified when the website is live!</p>
+        <!-- Notify Me Form -->
+        <form action="https://formspree.io/f/xdkogwda" method="POST">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email" />
+            <button type="submit" class="btn">Notify Me</button>
+        </form>
+        <!-- Button Container with Spacing Between Buttons -->
+        <div class="btn-container">
+            <a href="Comingsoon.html" class="btn">Back to Coming Soon</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; <span id="current-year"></span> US Web Design System. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to update the year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
