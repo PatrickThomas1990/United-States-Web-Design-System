@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coming Soon & Notify Me</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uswds@2.13.0/dist/css/uswds.min.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            flex-direction: column;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            overflow: hidden;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .logo img {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 2rem;
+            color: #005ea2;
+        }
+
+        .logo span:nth-child(2) {
+            font-size: 1.75rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #005ea2;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #005ea2;
+            color: #ffffff;
+            font-weight: 500;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            width: 100%;
+            max-width: 220px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .btn:hover {
+            background-color: #004a87;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 1.25rem;
+            color: #888;
+        }
+
+        form {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        form input[type="email"] {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 1.25rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Portrait Mode for Mobile and Tablets */
+        @media (max-width: 767px) {
+            body {
+                justify-content: flex-start;
+                padding-top: 10px;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.25rem;
+            }
+
+            .btn {
+                font-size: 1.25rem;
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            footer {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                padding: 15px;
+                max-width: 100%;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+
+            form input[type="email"] {
+                font-size: 1.25rem;
+                max-width: 90%;
+                margin-bottom: 25px;
+            }
+
+            .btn-container {
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        /* iPad Portrait Fix */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            form input[type="email"] {
+                margin-bottom: 20px;
+                max-width: 90%;
+            }
+
+            .btn {
+                font-size: 1.25rem;
+                max-width: 250px;
+                margin-top: 20px;
+            }
+
+            .container {
+                padding: 20px;
+                max-width: 100%;
+                min-height: 350px;
+            }
+
+            footer {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* iPad Landscape Fix */
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            .container {
+                width: 90%;
+                padding: 15px;
+                min-height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: visible;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            form input[type="email"] {
+                font-size: 1.25rem;
+                max-width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .btn {
+                font-size: 1.25rem;
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            footer {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Coming Soon Section -->
+    <div id="comingSoonSection" class="container">
+        <div class="logo">
+            <img src="https://i.postimg.cc/VsnBbzHR/lg-black.png" alt="USWDS Logo"
+                style="max-width: 150px; margin-bottom: 15px;">
+            <span>USWDS</span>
+            <span>United States Web Design System</span>
+        </div>
+        <h1>Coming Soon</h1>
+        <p>Our website is under construction. Stay tuned for updates!</p>
+        <div class="btn-container">
+            <button onclick="showNotifyMe()" class="btn">Notify Me</button>
+        </div>
+    </div>
+
+    <!-- Notify Me Section -->
+    <div id="notifyMeSection" class="container" style="display:none;">
+        <div class="logo">
+            <img src="https://i.postimg.cc/VsnBbzHR/lg-black.png" alt="USWDS Logo"
+                style="max-width: 150px; margin-bottom: 15px;">
+            <span>USWDS</span>
+            <span>United States Web Design System</span>
+        </div>
+        <h1>Notify Me</h1>
+        <p>Enter your email to get notified when the website is live.</p>
+        <form action="https://formspree.io/f/xdkogwda" method="POST" id="notifyForm">
+            <input type="email" name="email" placeholder="Enter your email" required aria-label="Email Address">
+            <button type="submit" class="btn">Notify Me</button>
+        </form>
+        <button onclick="showComingSoon()" class="btn" style="background-color: #d9534f;">Back to Coming Soon</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 USWDS. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showNotifyMe() {
+            document.getElementById('comingSoonSection').style.display = 'none';
+            document.getElementById('notifyMeSection').style.display = 'block';
+        }
+
+        function showComingSoon() {
+            document.getElementById('notifyMeSection').style.display = 'none';
+            document.getElementById('comingSoonSection').style.display = 'block';
+        }
+
+        document.querySelector("form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let formData = new FormData(event.target);
+            fetch(event.target.action, {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('notifyMeSection').style.display = 'none';
+                    alert('Thank you for subscribing!');
+                }
+            }).catch(error => {
+                // No error message displayed anymore
+            });
+        });
+    </script>
+</body>
+
+</html>
